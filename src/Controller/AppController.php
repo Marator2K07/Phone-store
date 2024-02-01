@@ -18,7 +18,7 @@ class AppController extends AbstractController
         $this->twig = $twig;
     }
 
-    #[Route('/app', name: 'app_phone_store')]
+    #[Route('/', name: 'app_phone_store')]
     public function index(PhoneRepository $phoneRepository,
                           ManufacturerRepository $manufacturerRepository): Response
     {
