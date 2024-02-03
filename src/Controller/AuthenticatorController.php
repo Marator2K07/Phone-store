@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -30,8 +31,10 @@ class AuthenticatorController extends AbstractController
     }
 
     #[Route(path: '/sign-out', name: 'app_sign_out')]
-    public function app_sign_out(): void
+    public function app_sign_out(Request $request): Response
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        $session = $request->getSession();
+        $session->invalidate();
+        return $this->redirectToRoute('app_sign_in');
     }
 }
