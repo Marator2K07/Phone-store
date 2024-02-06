@@ -35,6 +35,6 @@ class AuthenticatorController extends AbstractController
     {
         $session = $request->getSession();
         $session->invalidate();
-        return $this->redirectToRoute('app_sign_in');
+        return $this->redirectToRoute('app_phone_store');
     }
 }
