@@ -30,10 +30,21 @@
             value="{{ csrf_token('authenticate') }}"
         >
 
-        <button class="btn btn-primary btn-block mb-4" type="submit">
-            Sign in
-        </button>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <button class="btn btn-primary btn-block mb-4" type="submit">
+                    Sign in
+                </button>  
+            </div>
+            <div class="col-2">
+                <a class="btn btn-light action-button" role="button" href="/">Back</a></div>
+            </div>
+        </div>
+
     </form>
+
+    
+
 </div>
 
 {% endblock %}
